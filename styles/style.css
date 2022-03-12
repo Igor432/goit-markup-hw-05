@@ -79,7 +79,7 @@ header {
     margin-left: 94px;
 }
 
-.items {
+.menu-link {
     font-weight: 500;
     font-size: 14px;
     line-height: 1.1;
@@ -90,10 +90,10 @@ header {
     padding-bottom: 32px;
     display: block;
     position: relative;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.items::after,
-.items::after {
+.current::after {
     content: '';
     display: block;
     width: 100%;
@@ -103,12 +103,6 @@ header {
     border-radius: 2px;
     bottom: 0;
     left: 0;
-    opacity: 0;
-}
-
-.items:after {
-    display: block;
-    opacity: 1;
 }
 
 .menu>li {
@@ -141,24 +135,22 @@ header {
     letter-spacing: 0.03em;
     justify-content: center;
     align-items: center;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.items:hover,
-.items:focus {
+.menu-link:hover,
+.menu-link:focus {
     color: var(--blue-color);
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mail:hover,
 .mail:focus {
     color: var(--blue-color);
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .tel:hover,
 .tel:focus {
     color: var(--blue-color);
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contacts-item {
@@ -178,18 +170,17 @@ header {
 .contact-icons {
     fill: currentColor;
     margin-right: 10px;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .tel:hover .contact-icons,
 .tel:focus .contact-icons {
     fill: var(--blue-color);
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mail:hover .contact-icons,
 .mail:focus .contact-icons {
     fill: var(--blue-color);
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -422,22 +413,22 @@ header {
     justify-content: center;
     align-items: center;
     border-radius: 50%;
+    transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-links:hover,
 .team-links:focus {
     background-color: var(--blue-color);
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-icons {
     fill: var(--icons-color);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-links:hover .social-icons,
 .team-links:focus .social-icons {
     fill: #ffffff;
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -458,21 +449,21 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-card:hover,
 .clients-card:focus {
     border-color: var(--blue-color);
-    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .client-icons {
     fill: var(--icons-color);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.clients-card:hover .client-icons {
+.clients-card:hover .client-icons:focus {
     fill: var(--blue-color);
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -520,6 +511,7 @@ footer {
     letter-spacing: 0.03em;
     color: #ffffff;
     text-decoration: none;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-mail,
@@ -529,23 +521,21 @@ footer {
     letter-spacing: 0.03em;
     color: rgba(255, 255, 255, 0.6);
     text-decoration: none;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-address:hover,
 .footer-address:focus {
     color: var(--blue-color);
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-mail:hover,
 .footer-tel:hover {
     color: var(--blue-color);
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-mail:focus,
 .footer-tel:focus {
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     color: var(--blue-color);
 }
 
@@ -579,11 +569,11 @@ footer {
     background-color: rgba(255, 255, 255, 0.1);
     cursor: pointer;
     vertical-align: middle;
+    transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-items:hover,
 .footer-items:focus {
-    transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
     background-color: var(--blue-color);
 }
 
@@ -623,11 +613,13 @@ footer {
     text-decoration: none;
     position: relative;
     overflow: hidden;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .cards-main {
     position: relative;
     overflow: hidden;
+    transition: transform 250ms ease;
 }
 
 .cards-main::before {
@@ -664,7 +656,6 @@ footer {
 
 .cards-link:hover,
 .cards-link:focus {
-    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
@@ -703,10 +694,10 @@ footer {
     border-radius: 4px;
     padding: 6px 22px 6px 22px;
     border: transparent;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .buttons:focus {
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
     background-color: var(--blue-color);
     color: white;
     border: transparent;
@@ -714,7 +705,6 @@ footer {
 }
 
 .buttons:hover {
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
     background-color: var(--blue-color);
     color: white;
     cursor: pointer;
@@ -767,8 +757,8 @@ footer {
     background-position: center;
     border: 1px solid rgba(0, 0, 0, 0.1);
     background-repeat: no-repeat;
-    float: right;
-    margin-top: 8px;
-    margin-right: 8px;
     cursor: pointer;
+    position: absolute;
+    top: 8px;
+    right: 8px;
 }

@@ -479,6 +479,7 @@ footer {
 
 .footer-container {
     display: flex;
+    align-items: baseline;
 }
 
 .address {
@@ -621,21 +622,31 @@ footer {
     position: relative;
     overflow: hidden;
     transition: transform 250ms ease;
+    text-align: center;
+    justify-content: center;
 }
 
-.cards-main::before {
+.product-overlay {
     position: absolute;
-    display: block;
-    content: "";
+    color: #FFFFFF;
     transition: transform 250ms ease;
     background-color: rgba(33, 150, 243, 0.9);
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     transform: translateY(+100%);
+    align-items: center;
+    display: flex;
+    padding-left: 24px;
+    padding-right: 24px;
+    font-size: 18px;
+    line-height: 1.5;
+    letter-spacing: 0.03em;
 }
 
-.cards-link:hover .cards-main::before,
-.cards-link:focus .cards-main::before {
+.cards-link:hover .product-overlay,
+.cards-link:focus .product-overlay {
     transform: translateY(0);
 }
 
